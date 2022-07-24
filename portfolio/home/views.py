@@ -5,9 +5,13 @@ def home(request):
     return render(request, 'index.html')
 
 def about(request):
-    # return HttpResponse('about')
     return render(request, 'about.html')
+    # return HttpResponse('about')
+      
 
 def contact(request):
-    # return HttpResponse('contact')
+    # handling the form here
+    if request.method == 'POST':
+        print(request.POST['name'])
+        print(request.POST['phone'])
     return render(request, 'contact.html')
